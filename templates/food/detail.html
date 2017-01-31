@@ -1,0 +1,27 @@
+{% load static %}
+
+{% if records %}
+<div class="post">
+<h4>Recipe:</h4>
+
+<table>
+  <tr>
+    <th>Recipe Name</th>
+    <th>Recipe Content</th>
+  </tr>
+
+    {% for item in records %}
+  <tr>
+    <td>{{ item.recipe_name }}</td>
+    <td>{{ item.recipe_content }}</td>
+  </tr>
+    {% endfor %}
+</table>
+<form action={% url 'food:index' %}>
+        <input type="submit" value="Back" />
+</form>
+</div>
+{% else %}
+        <p>No data.</p>
+{% endif %}
+

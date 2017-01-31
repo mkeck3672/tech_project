@@ -1,0 +1,22 @@
+{% load static %}
+
+{% if groups %}
+<form action={% url 'food:index' %}>
+        <input type="submit" value="Back" />
+</form>
+    <h4>Current Recipes:</h4>
+    <table>
+  <tr>
+    <th>Recipe Name</th>
+    <th>Recipe Content</th>
+  </tr>
+        {% for item in groups %}
+  <tr>
+    <td>{{ item.recipe_name }}</td>
+    <td>{{ item.recipe_content }}</td>
+  </tr>
+        {% endfor %}
+    </table>
+{% else %}
+        <p>No data.</p>
+{% endif %}

@@ -1,0 +1,17 @@
+<div class="post">
+<h4>Successfully Added.</h4>
+
+<table style="border: 1px solid black;">
+  <tr>
+    <th>Recipe Name</th>
+    <th>Recipe Content</th>
+  </tr>
+  <tr>
+    <td>{{ post.recipe_name }}</td>
+    <td>{{ post.recipe_content }}</td>
+  </tr>
+</table>
+<form action={% url 'food:index' %}>
+        <input type="submit" value="Back" />
+</form>
+</div>
